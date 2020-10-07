@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Get Json : Home Page
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list>
+      <ion-item-sliding #item *ngFor="let data of jsonData">
+        <ion-item>
+          <h2>{{data.id}}.) {{data.first_name}} {{data.last_name}} : {{data.email}}</h2>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="primary" (click)="handleEditDataButton(data)">
+            <ion-icon name="create"></ion-icon>
+          </button>
+          <button ion-button color="danger" (click)="handleDeleteDataButton(data)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-list>
+</ion-content>
+
+<ion-fab bottom right>
+  <button ion-fab (click)="handleAddDataButton()">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-fab>
